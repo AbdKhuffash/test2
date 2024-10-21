@@ -4,7 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Language Translator</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .translator-container {
+      display: inline-block;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,24 +39,19 @@
       <option value="l2_to_l1">L2 to L1</option>
     </select>
 
-    <!-- Text area for input -->
     <textarea id="text-input" placeholder="Enter your text here..."></textarea>
     
-    <!-- Translate button -->
     <button id="translate-btn">Translate</button>
 
-    <!-- Output area -->
     <p><strong>Result:</strong></p>
     <div id="translated-output" style="border: 1px solid #ccc; padding: 10px; min-height: 50px;"></div>
   </div>
 
   <script>
-    // JavaScript logic (simplified, no actual translation yet)
     document.getElementById("translate-btn").addEventListener("click", function() {
       const inputText = document.getElementById("text-input").value;
       const selectedOption = document.getElementById("language").value;
       
-      // Placeholder for translation logic
       let translatedText;
       if (selectedOption === "l1_to_l2") {
         translatedText = "Translating from L1 to L2: " + inputText;
@@ -42,7 +59,6 @@
         translatedText = "Translating from L2 to L1: " + inputText;
       }
 
-      // Display the translated text
       document.getElementById("translated-output").innerText = translatedText;
     });
   </script>
